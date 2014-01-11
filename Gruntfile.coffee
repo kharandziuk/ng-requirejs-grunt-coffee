@@ -22,16 +22,6 @@ module.exports = (grunt) ->
   grunt.initConfig({
     paths: pathsConfig(),
     pkg: appConfig,
-    compass:
-      dev:
-        options:
-          sassDir: '<%= paths.sass %>'
-          cssDir: '<%= paths.css %>'
-          imagesDir: '<%= paths.src_img %>'
-          fontsDir: '<%= paths.fonts %>'
-          generatedImagesDir: '<%= paths.img %>'
-          relativeAssets: true
-          force: true
     watch:
         grunt:
           files: ['Gruntfile.coffee']
@@ -61,5 +51,5 @@ module.exports = (grunt) ->
 
   grunt.registerTask('runApp', ()->require('./app.js'))
 
-  grunt.registerTask('build', ['compass', 'coffee'])
+  grunt.registerTask('build', ['coffee'])
   grunt.registerTask('server', ['build', 'runApp','watch'])
