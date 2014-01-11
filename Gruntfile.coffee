@@ -10,13 +10,12 @@ module.exports = (grunt) ->
     return {
       app: @app
       bower: 'bower_components'
-      css: 'public/css'
-      coffee: 'client_src/coffee'
-      sass: 'client_src/sass'
-      src_img: 'client_src/img'
-      js: 'public/js'
-      img: 'public/img/icons'
-      fonts: 'public/fonts'
+      css: 'static/css'
+      coffee: 'assets/coffee'
+      sass: 'assets/sass'
+      js: 'static/js'
+      img: 'static/img'
+      fonts: 'static/fonts'
     }
 
   grunt.initConfig({
@@ -39,7 +38,7 @@ module.exports = (grunt) ->
         flatten: false
         cwd: '<%= paths.coffee %>'
         src: ['**/*.coffee']
-        dest: 'public/js/'
+        dest: '<%= paths.js %>'
         ext: '.js'
       server:
         options:
