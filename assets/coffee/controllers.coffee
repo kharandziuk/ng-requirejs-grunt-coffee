@@ -1,7 +1,6 @@
-'use strict'
-
-# Controllers
-
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', [() -> ])
-  .controller('MyCtrl2', [() -> ])
+define ['angular'] , (ng)->
+  'use strict'
+  # Controllers
+  ng.module('controllers', [])
+    .controller('MyCtrl1', [() -> ])
+    .controller('MyCtrl2', [() -> ])
