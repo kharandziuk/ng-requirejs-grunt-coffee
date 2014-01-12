@@ -1,21 +1,23 @@
 'use strict'
 BOWER_PATH = '../bower_components'
 
-fromBower = (path, min) ->
-  path = "#{BOWER_PATH}/#{path}/#{path}"
-  if min?
-    path += '.min'
+fromBower = (dir, name) ->
+  if not name?
+    path = "#{BOWER_PATH}/#{dir}/#{dir}"
+  else
+    path = "#{BOWER_PATH}/#{dir}/#{name}"
   return path
 
 
 require.config(
   shim:
     angular:
-      deps: ['jquery']
       exports: 'angular'
   paths:
     angular: fromBower('angular')
-    jquery: fromBower 'jquery'
+    domReady: fromBower 'requirejs-domready', 'domReady'
+  deps: ['./bootstrap']
+
+
 )
 
-require(['app'], (app)->)

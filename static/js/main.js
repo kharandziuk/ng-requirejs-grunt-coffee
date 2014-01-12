@@ -3,10 +3,12 @@ var BOWER_PATH, fromBower;
 
 BOWER_PATH = '../bower_components';
 
-fromBower = function(path, min) {
-  path = "" + BOWER_PATH + "/" + path + "/" + path;
-  if (min != null) {
-    path += '.min';
+fromBower = function(dir, name) {
+  var path;
+  if (name == null) {
+    path = "" + BOWER_PATH + "/" + dir + "/" + dir;
+  } else {
+    path = "" + BOWER_PATH + "/" + dir + "/" + name;
   }
   return path;
 };
@@ -14,14 +16,12 @@ fromBower = function(path, min) {
 require.config({
   shim: {
     angular: {
-      deps: ['jquery'],
       exports: 'angular'
     }
   },
   paths: {
     angular: fromBower('angular'),
-    jquery: fromBower('jquery')
-  }
+    domReady: fromBower('requirejs-domready', 'domReady')
+  },
+  deps: ['./bootstrap']
 });
-
-require(['app'], function(app) {});

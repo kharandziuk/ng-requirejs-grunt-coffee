@@ -1,0 +1,13 @@
+<div ng-controller="TestListCtrl">
+    Search: <input ng-model="query">
+    <select ng-model="orderProp">
+        <option value="name">byName</option>
+        <option value="city">byCity</option>
+    </select>
+    <ul>
+        <li ng-repeat="dude in dudes | filter:query | orderBy:orderProp">
+        <a href="{{ dude.detailUrl }}">{{ dude.name }}</a>
+        from {{ dude.city }}
+        </li>
+    </ul>
+</div>
