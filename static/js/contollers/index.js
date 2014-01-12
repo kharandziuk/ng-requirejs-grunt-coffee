@@ -1,1 +1,0 @@
-define(['./TestDetailCtrl', './TestListCtrl'], function() {});
