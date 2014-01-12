@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" ng-app="myApp">
 <head>
-    <meta charset="UTF-8">
-    <title>place</title>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
 </head>
-<body ng-app='app' id='some'>
-    <article ng-view></article>
-    <script data-main="/static/js/main.js" src="/static/bower_components/requirejs/require.js"></script>
+<body>
+  <ul class="menu">
+    <li><a href="#/view1">view1</a></li>
+    <li><a href="#/view2">view2</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <div>Angular seed app: v<span app-version></span></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="/static/bower_components/angular/angular.js"></script>
+  <script src="/static/bower_components/angular/angular-route.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/services.js"></script>
+  <script src="/static/js/controllers.js"></script>
+  <script src="/static/js/filters.js"></script>
+  <script src="/static/js/directives.js"></script>
 </body>
 </html>
