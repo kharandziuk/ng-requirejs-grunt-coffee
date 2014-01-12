@@ -16,6 +16,7 @@
     "jquery": "~2.0.3",
     "angular": "~1.2.8",
     "requirejs": "~2.1.10",
-    "requirejs-domready": "~2.0.1"
+    "requirejs-domready": "~2.0.1",
+    "angular-route": "~1.2.8"
   }
 }
